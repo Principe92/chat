@@ -4,6 +4,7 @@ chat - Network Chat Client
 # Usage:
 
 server *IP address* *port number*
+
 client *IP address* *port number*
 
 #Description
