@@ -122,17 +122,10 @@ void writeMessage(char *msg, char *msg2, Client *ct){
 
 		if (pt->cfd != ct->cfd){			
 			tryWrite(msg, pt);
-		
-			/*if (pt != NULL){
-				char *name = concat(pt->name, ":");
-				tryWrite(name, pt);
-			}*/
 		}
 
 		pt = tmp;
 	}
-
-	//if (msg2 != NULL) tryWrite(msg2, ct);
 
 	printf("%s", msg);
 }
