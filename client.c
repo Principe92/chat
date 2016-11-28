@@ -1,12 +1,12 @@
 #include <stdio.h>
  #include <stdlib.h>
- #include <string.h>          //for string operations
- #include <unistd.h>          //NULL constant defined here
+ #include <string.h>          
+ #include <unistd.h>          
  #include <sys/types.h>
- #include <sys/socket.h>          //for sockets
- #include <netinet/in.h>          //Internet Protocol family sockaddr_in defined here
- #include <pthread.h>          // for the cosy POSIX threads
-// #include <signal.h>          //for ctrl+c signal
+ #include <sys/socket.h>         
+ #include <netinet/in.h>         
+ #include <pthread.h>          
+
  #define MYPORT 2012     /* default port number */
  #define MAXDATALEN 256
  int      sockfd;
@@ -16,7 +16,7 @@
  char      buf[10];
  void* chat_write(int);
  void* chat_read(int);
- /***************main starts************/
+
  int main(int argc, char *argv[]){
   pthread_t thr1,thr2;          /* variable to hold thread ID */
      if( argc != 3 ){
