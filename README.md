@@ -1,3 +1,8 @@
+# collaborators
+Roberto Ayuso
+Princewill Okorie
+Woo Seok Yang
+
 # chat
 chat - Network Chat Client
 
