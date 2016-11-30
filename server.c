@@ -104,7 +104,7 @@ void tryWrite(char *msg, Client *pt){
 	if (pt != NULL){
 		int res = write(pt->cfd, msg, strlen(msg)+1);
 		if (res == -1){
-			exitChat(pt);
+			//exitChat(pt);
 		}
 	}
 }
@@ -193,12 +193,14 @@ void readPort(){
 
 		while (1){
 			int size = read(pt->cfd, buffer, BUFFER_SIZE);
-			if (size <= 0) break;
+			if (size == 0) {exitChat(pt); break;}
+			else if (size < 0 ) break;
 			else{
 
 				// check if quit
 				if (!strncmp(buffer, quit, strlen(quit))){
 					exitChat(pt);
+					break;
 				}
 
 				else if (hasName(buffer))
